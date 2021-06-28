@@ -44,17 +44,17 @@ namespace ConsoleApp5
                 case 1:
                     volume = hdd.volume * 1024;
                     time = volume / hdd.speed;
-                    Console.WriteLine(time);
+                    Console.WriteLine($"{time} cек");
                     break;
                 case 2:
                     volume = flash.memory_capacity * 8;
                     time = volume / flash.speed;
-                    Console.WriteLine(time);
+                    Console.WriteLine($"{time} cек");
                     break;
                 case 3:
                     volume = dvd.volume * 8192;
                     time = volume / dvd.speed;
-                    Console.WriteLine(time);
+                    Console.WriteLine($"{time} cек");
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
