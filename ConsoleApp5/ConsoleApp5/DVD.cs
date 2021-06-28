@@ -5,6 +5,7 @@ namespace ConsoleApp5
 {
     public class DVD : Storage
     {
+        public double speed = 11.08;
         public double write_speed;
         public double reading_speed;
         public string type;

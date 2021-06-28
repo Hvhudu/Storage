@@ -27,7 +27,41 @@ namespace ConsoleApp5
             Console.WriteLine("Введите объём памяти Flash-накопителя");
             flash.memory_capacity = Convert.ToInt32(Console.ReadLine());
             flash.GetVolume();
-            TotalMemoryCapacity(dvd, hdd, flash);
+            TotalMemoryCapacity(dvd, hdd, flash); 
+            
+            Console.WriteLine("Выберите устройство для записи");
+            Console.WriteLine("1 - HDD");
+            Console.WriteLine("2 - Fash-накпитель");
+            Console.WriteLine("3 - DVD");
+
+            int choice;
+            choice = Convert.ToInt32(Console.ReadLine());
+            double time;
+            double volume;
+
+            switch (choice)
+            {
+                case 1:
+                    volume = hdd.volume * 1024;
+                    time = volume / hdd.speed;
+                    Console.WriteLine(time);
+                    break;
+                case 2:
+                    volume = flash.memory_capacity * 8;
+                    time = volume / flash.speed;
+                    Console.WriteLine(time);
+                    break;
+                case 3:
+                    volume = dvd.volume * 8192;
+                    time = volume / dvd.speed;
+                    Console.WriteLine(time);
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("ERROR");
+                    break;
+                    
+            }
         }
     }
 }
